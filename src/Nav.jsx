@@ -2,7 +2,8 @@ import { IonApp } from "@ionic/react";
 import { useSelector } from "react-redux";
 import AllTasks from "./Pages/Tasks/AllTasks";
 import MainView from "./Pages/MainView";
-import GanttChart from "./Pages/Tasks/GanttChart";
+import GanttTimeLine from "./Pages/Tasks/GanttTimeLine";
+import Login from "./Pages/Login/Login";
 const Nav = () => {
 
     const pageUrl = useSelector(state => state.pageNavReducer.url);
@@ -10,13 +11,17 @@ const Nav = () => {
     const handleNavigation = () => {
         switch(pageUrl){
             case '/':
-                return(<MainView />)
+                return(<Login />)
+                // return(<MainView />)
             case 'allTasks' :
                 return(<AllTasks />)
             case 'ganttChart' :
-                return(<GanttChart />)
-            default :
+                return(<GanttTimeLine />)
+            case 'home' :
                 return(<MainView />)
+            default :
+                return(<Login />)
+                // return(<MainView />)
         }
     }
 

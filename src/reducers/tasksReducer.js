@@ -1,5 +1,5 @@
 const initialState = {
-    allTasks : []
+    allTasks : [],
 }
 
 const tasksReducer = (state=initialState,action) => {
@@ -8,6 +8,11 @@ const tasksReducer = (state=initialState,action) => {
             return {
                 ...state,
                 allTasks : action.payload
+            }
+        case 'loggedOut' :
+            return {
+                ...state,
+                allTasks : []
             }
         default :
             return state

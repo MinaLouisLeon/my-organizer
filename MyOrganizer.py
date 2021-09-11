@@ -18,7 +18,8 @@ def fetch_email_from_server(my_imap_server,my_username,my_password) :
 
 #for development
 eel.init('src',['.tsx','.ts','.jsx','.js','.html','.css'])
-eel.start({'port' : 3000},mode="chromeApp",port=8080)
+#eel.start({'port' : 3000},mode="chromeApp",port=8080)
+eel.start({'port' : 3000},mode="chrome",port=8080)
 
 #for production
 # eel.init('build',['.js','.html','.htm','.xhtml'])

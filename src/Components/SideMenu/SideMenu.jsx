@@ -29,7 +29,7 @@ const SideMenu = () => {
             </IonHeader>
             <IonContent>
                 <IonList>
-                    <IonItem button onClick={() => dispatch(actionSetUrl('/'))}>
+                    <IonItem button onClick={() => dispatch(actionSetUrl('home'))}>
                         <IonLabel>
                             Home
                         </IonLabel>

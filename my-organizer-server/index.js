@@ -20,23 +20,52 @@ const db = knex({
 app.use(bodyparser.json())
 
 app.post('/add-tasks',async (req,res) => {
-     await db('tasks').insert([{Task:req.body.taskName,start:req.body.start,end:req.body.end,progress:req.body.progress,dependencies:req.body.dependencies,type:req.body.type}]);
-    await db.select('*').from('tasks').then((data) => {
+     await db('Tasks')
+     .insert([{
+         name:req.body.taskName,
+         start:req.body.start,
+         end:req.body.end,
+        color:'blue',
+        status:'open',
+        note:''
+    }]);
+    await db.select('*').from('Tasks').then((data) => {
         res.json(data)
     })
     console.log(req.body)
 })
 
 app.post('/delete-task',async (req,res) => {
-    await db('tasks').where('id',req.body.id).del();
-    await db.select('*').from('tasks').then((data) => {
+    await db('Tasks').where('id',req.body.id).del();
+    await db.select('*').from('Tasks').then((data) => {
         res.json(data);
     })
 })
 
 app.post('/get-tasks',async (req,res) => {
-    await db.select('*').from('tasks').then((data) => {
+    await db.select('*').from('Tasks').then((data) => {
         res.json(data);
+    })
+})
+
+app.post('/updateTask' , async (req,res) => {
+    console.log(req.body)
+    await db("Tasks").where('id',req.body.taskId).update({
+        name:req.body.taskName,
+        start:req.body.taskStart,
+        end:req.body.taskEnd
+    })
+    await db.select('*').from('Tasks').then((data) => {
+        res.json(data)
+    })
+})
+
+app.post('/update-task-name', async (req,res) => {
+    await db("Tasks").where('id',req.body.taskId).update({
+        name:req.body.taskName
+    })
+    await db.select('*').from('Tasks').then((data) => {
+        res.json(data)
     })
 })
 

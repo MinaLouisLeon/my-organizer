@@ -1,6 +1,7 @@
 import {
   IonButton,
   IonButtons,
+  IonCard,
   IonContent,
   IonHeader,
   IonMenuButton,
@@ -11,13 +12,13 @@ import {
 } from "@ionic/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { actionSetAllTasks, actionSetUrl } from "../../actions";
+import {actionSetUrl } from "../../actions";
 import AddTask from "../../Components/tasks/AddTask";
 import ListTasks from "../../Components/tasks/ListTasks";
 import SideMenu from "../../Components/SideMenu/SideMenu";
+import "./Tasks.css";
 const AllTasks = () => {
-
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [addTaskPopOverState, setAddTaskPopOverState] = useState({
     addTaskShowPopOver: false,
@@ -34,7 +35,7 @@ const AllTasks = () => {
 
   return (
     <IonPage>
-    <SideMenu />
+      <SideMenu />
       <IonPopover
         event={addTaskPopOverState.event}
         isOpen={addTaskPopOverState.addTaskShowPopOver}
@@ -50,10 +51,13 @@ const AllTasks = () => {
       </IonPopover>
       <IonHeader>
         <IonToolbar>
-            <IonMenuButton slot='start' />
-          <IonTitle className="fw6 black">{/* TODO add date time  */}</IonTitle>
+          <IonMenuButton slot="start" />
+          <IonTitle className="fw6 black">All Tasks</IonTitle>
           <IonButtons slot="end">
-            <IonButton color='success' onClick={() => dispatch(actionSetUrl('ganttChart'))}>
+            <IonButton
+              color="success"
+              onClick={() => dispatch(actionSetUrl("ganttChart"))}
+            >
               Gantt Chart
             </IonButton>
             <IonButton
@@ -67,7 +71,11 @@ const AllTasks = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent id="enableSideMenu">
-        <ListTasks />
+        <div className="all-tasks-container">
+          <IonCard className="shadow-2 all-tasks-inner-container">
+            <ListTasks />
+          </IonCard>
+        </div>
       </IonContent>
     </IonPage>
   );
