@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-/my-organizer-server
+/my-organizer-server/node_modules
 /.pnp
 .pnp.js
 
