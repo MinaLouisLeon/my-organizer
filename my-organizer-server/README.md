@@ -1,1 +1,1 @@
-# afro-maint-manager-server
+# my-organizer-server
