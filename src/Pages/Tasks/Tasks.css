@@ -1,14 +1,14 @@
 .all-tasks-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
-.all-tasks-inner-container{
-    width: 90%;
-    height: 90%;
+.all-tasks-inner-container {
+  width: 90%;
+  height: 90%;
 }

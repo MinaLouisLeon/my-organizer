@@ -1,5 +1,6 @@
 const initialState = {
     allTasks : [],
+    links : []
 }
 
 const tasksReducer = (state=initialState,action) => {
@@ -7,12 +8,18 @@ const tasksReducer = (state=initialState,action) => {
         case 'setAllTasks' :
             return {
                 ...state,
-                allTasks : action.payload
+                allTasks : action.payload,
+            }
+        case 'setTasksLinks' :
+            return {
+                ...state,
+                links : action.payload,
             }
         case 'loggedOut' :
             return {
                 ...state,
-                allTasks : []
+                allTasks : [],
+                links : []
             }
         default :
             return state

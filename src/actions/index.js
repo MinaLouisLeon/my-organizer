@@ -31,3 +31,10 @@ export const actionSetAllTasks = (args) => {
         payload : args
     }
 }
+
+export const actionSetTasksLinks = (args) => {
+    return {
+        type : 'setTasksLinks',
+        payload : args
+    }
+}
