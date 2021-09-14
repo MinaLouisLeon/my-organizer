@@ -23,6 +23,22 @@ export const actionSetUrl = (args) => {
     }
 }
 
+//projectsReducer
+
+export const actionSetAllProjects = (args) => {
+    return{
+        type : 'setAllProjects',
+        payload : args
+    }
+}
+
+export const actionSetProjectsLinks = (args) => {
+    return{
+        type : 'setProjectsLinks',
+        payload : args
+    }
+}
+
 //tasksReducer
 
 export const actionSetAllTasks = (args) => {
@@ -38,3 +54,4 @@ export const actionSetTasksLinks = (args) => {
         payload : args
     }
 }
+

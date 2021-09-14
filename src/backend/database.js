@@ -45,6 +45,10 @@ export const deleteFromDatabase = async (path, document) => {
   return getFromDatabase(path);
 };
 
+export const createNewUser = async () => {
+  await setDoc(doc(db,"user1/userData/Projects","project 1"),{})
+}
+
 export const getFromDatabase = async (path) => {
   const querySnapshot = await getDocs(collection(db, path));
   let myData = [];

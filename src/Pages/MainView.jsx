@@ -2,10 +2,14 @@ import { IonButton, IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, I
 import SideMenu from '../Components/SideMenu/SideMenu';
 import { useDispatch } from 'react-redux';
 import { actionLoggedOut } from '../actions';
-
+import { createNewUser } from '../backend/database';
 const MainView = () => {
 
     const dispatch = useDispatch();
+
+    const testDatabase = () => {
+        createNewUser();
+    }
 
     return (
         <IonPage>
@@ -22,7 +26,7 @@ const MainView = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen id='enableSideMenu'>
-
+                <IonButton onClick={() => testDatabase()} >Test Database</IonButton>
             </IonContent>
         </IonPage>
     )

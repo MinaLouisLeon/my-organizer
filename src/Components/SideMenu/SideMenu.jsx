@@ -53,6 +53,7 @@ const SideMenu = () => {
           <IonItem button onClick={() => handleAllTasks()}>
             <IonLabel>All Tasks</IonLabel>
           </IonItem>
+         
         </IonList>
       </IonContent>
     </IonMenu>
