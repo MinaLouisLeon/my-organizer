@@ -1,6 +1,6 @@
 import { IonButton, IonItem, IonLabel, IonList } from "@ionic/react";
 import { useSelector, useDispatch } from "react-redux";
-import { actionSetAllTasks, actionSetTasksLinks } from "../../actions";
+import { actionSetAllTasks, actionSetEditTask, actionSetTasksLinks, actionSetUrl } from "../../actions";
 import { deleteFromDatabase } from "../../backend/database";
 import '../../Pages/Tasks/Tasks.css'
 const ListTasks = () => {
@@ -44,6 +44,11 @@ const ListTasks = () => {
     //   });
   };
 
+  const handleEditTask = (id,data) => {
+    dispatch(actionSetEditTask(id,data));
+    dispatch(actionSetUrl('editTask'))
+  }
+
   const handleList = () => {
     if (allTasks.length !== 0) {
       return (
@@ -52,7 +57,7 @@ const ListTasks = () => {
             return (
               <IonItem>
                 <IonLabel>{task.data.name}</IonLabel>
-                <IonButton color="success">Edit</IonButton>
+                <IonButton color="success" onClick={() => handleEditTask(task.id,task.data)} >Edit</IonButton>
                 <IonButton color="danger" onClick={() => handleDelete(task.id)}>
                   Delete
                 </IonButton>

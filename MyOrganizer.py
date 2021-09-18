@@ -17,10 +17,12 @@ def fetch_email_from_server(my_imap_server,my_username,my_password) :
         eel.fetched_email_from_server(my_list)
 
 #for development
-eel.init('src',['.tsx','.ts','.jsx','.js','.html','.css'])
+# eel.init('src',['.tsx','.ts','.jsx','.js','.html','.css'])
+#to open in App form
 #eel.start({'port' : 3000},mode="chromeApp",port=8080)
-eel.start({'port' : 3000},mode="chrome",port=8080)
+#to open in browser
+# eel.start({'port' : 3000},mode="chrome",port=8080)
 
 #for production
-# eel.init('build',['.js','.html','.htm','.xhtml'])
-# eel.start('index.html',mode='chrome',port=8080)
+eel.init('build',['.js','.html','.htm','.xhtml'])
+eel.start('index.html',mode='chrome',port=8080)

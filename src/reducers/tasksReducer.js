@@ -1,6 +1,12 @@
 const initialState = {
     allTasks : [],
-    links : []
+    links : [],
+    editTask : [
+        {
+            id : 0,
+            data : []
+        }
+    ],
 }
 
 const tasksReducer = (state=initialState,action) => {
@@ -15,11 +21,37 @@ const tasksReducer = (state=initialState,action) => {
                 ...state,
                 links : action.payload,
             }
+        case 'setEditTask' :
+            return {
+                ...state,
+                editTask :  [
+                    {
+                        id : action.id,
+                        data : action.data
+                    }
+                ],
+            }
+        case 'clearEditTask' : 
+            return {
+                ...state,
+                editTask : [
+                    {
+                        id : 0,
+                        data : []
+                    }
+                ]
+            }
         case 'loggedOut' :
             return {
                 ...state,
                 allTasks : [],
-                links : []
+                links : [],
+                editTask : [
+                    {
+                        id : 0,
+                        data : []
+                    }
+                ],
             }
         default :
             return state

@@ -1,8 +1,6 @@
 import {
   IonButton,
   IonButtons,
-  IonCard,
-  IonCardContent,
   IonContent,
   IonHeader,
   IonMenuButton,
@@ -12,7 +10,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { actionSetUrl } from "../../actions";
 import AddTask from "../../Components/tasks/AddTask";
 import ListTasks from "../../Components/tasks/ListTasks";
@@ -20,7 +18,6 @@ import SideMenu from "../../Components/SideMenu/SideMenu";
 import "./Tasks.css";
 const AllTasks = () => {
   const dispatch = useDispatch();
-  const allTasks = useSelector((state) => state.tasksReducer.allTasks);
   const [addTaskPopOverState, setAddTaskPopOverState] = useState({
     addTaskShowPopOver: false,
     event: undefined,

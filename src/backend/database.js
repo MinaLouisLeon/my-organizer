@@ -35,6 +35,16 @@ export const updateTaskLink = async (path, document, start, end) => {
   return getFromDatabase(path);
 };
 
+export const editTask = async (path,document,name,color,note) => {
+  const editTaskRef = doc(db,path,document);
+  await updateDoc(editTaskRef,{
+    name : name,
+    color : color,
+    note : note
+  });
+  return getFromDatabase(path);
+}
+
 export const addToDatabase = async (path, document, data) => {
   await setDoc(doc(db, path, document), data);
   return getFromDatabase(path);

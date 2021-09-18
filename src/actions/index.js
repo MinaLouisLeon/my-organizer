@@ -55,3 +55,16 @@ export const actionSetTasksLinks = (args) => {
     }
 }
 
+export const actionSetEditTask = (id,data) => {
+    return{
+        type : 'setEditTask',
+        id : id,
+        data : data
+    }
+}
+
+export const actionClearEditTask = () => {
+    return{
+        type : 'clearEditTask'
+    }
+}

@@ -53,7 +53,9 @@ const SideMenu = () => {
           <IonItem button onClick={() => handleAllTasks()}>
             <IonLabel>All Tasks</IonLabel>
           </IonItem>
-         
+          <IonItem button onClick={() => dispatch(actionSetUrl('projects'))} >
+            <IonLabel>Projects</IonLabel>
+          </IonItem>
         </IonList>
       </IonContent>
     </IonMenu>

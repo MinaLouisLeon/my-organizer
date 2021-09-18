@@ -15,8 +15,8 @@ import '@ionic/react/css/display.css';
 
 import Nav from './Nav';
 
-export const eel = window.eel
-eel.set_host ( 'ws://localhost:8080' )
+// export const eel = window.eel
+// eel.set_host ( 'ws://localhost:8080' )
 
 const App = () => {
     return (

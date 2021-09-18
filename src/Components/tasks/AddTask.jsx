@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import {
   actionSetAllTasks,
   actionSetTasksLinks,
-  actionSetUrl,
 } from "../../actions";
 import { useSelector } from "react-redux";
 import { addToDatabase } from "../../backend/database";
@@ -54,7 +53,7 @@ const AddTask = () => {
       (today.getMonth() + 1) +
       "-" +
       (today.getDate() + 2);
-    let color = "blue";
+    let color = "#2196F3";
     let status = "open";
     let note = "";
     //firebase

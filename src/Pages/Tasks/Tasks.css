@@ -12,3 +12,11 @@
   width: 90%;
   height: 90%;
 }
+
+.color-picker-style {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}

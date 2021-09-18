@@ -67,20 +67,20 @@ const GanttTimeLine = () => {
     );
   };
 
-  // function compare(a, b) {
-  //   const idA = parseInt(a.id);
-  //   const idB = parseInt(b.id);
-  //   let comparison = 0;
-  //   if (idA > idB) {
-  //     comparison = 1;
-  //   } else if (idA < idB) {
-  //     comparison = -1;
-  //   }
-  //   return comparison;
-  // }
+  function compare(a, b) {
+    const idA = parseInt(a.id);
+    const idB = parseInt(b.id);
+    let comparison = 0;
+    if (idA > idB) {
+      comparison = 1;
+    } else if (idA < idB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
 
-  // tasks.sort(compare);
-  // console.log("ordred tasks : ", tasks);
+  tasks.sort(compare);
+
   const handleTaskUpdate = async (task, props) => {
     let id = "";
     let taskName = "";
